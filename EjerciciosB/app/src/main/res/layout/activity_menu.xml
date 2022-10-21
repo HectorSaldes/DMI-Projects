@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnMenu"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a Vistas"
+            app:icon="@drawable/ic_screen" />
+
+        <Button
+            android:id="@+id/btnSplash"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Ir a Splash"
+            app:icon="@drawable/ic_splash" />
+
+        <Button
+            android:id="@+id/btnList"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir a Lista"
+            app:icon="@drawable/ic_list" />
+
+        <Button
+            android:id="@+id/btnRoom"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir a Registrar"
+            app:icon="@drawable/ic_person" />
+
+        <Button
+            android:id="@+id/btnCalcu"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir al Calculadora"
+            app:icon="@drawable/ic_login" />
+
+        <Button
+            android:id="@+id/btnFormulario"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir al Login"
+            app:icon="@drawable/ic_login" />
+
+        <Button
+            android:id="@+id/btnFiguras"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir al Figuras"
+            app:icon="@drawable/ic_list" />
+
+        <Button
+            android:id="@+id/btnShared"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir a Shared"
+            app:icon="@drawable/ic_storage" />
+
+        <Button
+            android:id="@+id/btnRestApi"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ir a Retrofit rest"
+            app:icon="@drawable/ic_storage" />
+
+    </LinearLayout>
+
+</ScrollView>

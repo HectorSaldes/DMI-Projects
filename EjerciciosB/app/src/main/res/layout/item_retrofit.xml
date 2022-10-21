@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvItem"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/vwIndicador"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="#C61E1E" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="#4BB6B6" />
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Hector Saldaña"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- <Button
+             android:id="@+id/btnDelete"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:backgroundTint="#EA0A0A"
+             app:icon="@drawable/ic_delete" />-->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

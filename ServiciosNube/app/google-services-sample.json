@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1042769366851",
+    "project_id": "serviciosnube-4d9ca",
+    "storage_bucket": "serviciosnube-4d9ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042769366851:android:5f0b21d350333c11a8e9f6",
+        "android_client_info": {
+          "package_name": "dev.thepandadevs.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042769366851-ac9qqsiko2dtbard3pp22v12baj4jd86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.thepandadevs.myapplication",
+            "certificate_hash": "111c35a334e2945c12d08e80c125f1cca17578ad"
+          }
+        },
+        {
+          "client_id": "1042769366851-i8rdtku7ga33qad6qa9eu15aoh0mjrcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmzQ3C_sDgs2Uoh_PZeNLoGDOm1oi2xj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042769366851-i8rdtku7ga33qad6qa9eu15aoh0mjrcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

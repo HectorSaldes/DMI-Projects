@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".DataStoreActivity">
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:text="Registro"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnConsulta"
+        android:layout_width="match_parent"
+        android:text="Consulta"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
