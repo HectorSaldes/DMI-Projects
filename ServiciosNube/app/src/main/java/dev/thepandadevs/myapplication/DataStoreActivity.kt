@@ -11,9 +11,7 @@ class DataStoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDataStoreBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.btnRegistro.setOnClickListener {
-            startActivity(Intent(this, RegistroDataStoreActivity::class.java))
-        }
+        binding.btnRegistro.setOnClickListener { startActivity(Intent(this, RegistroDataStoreActivity::class.java)) }
+        binding.btnConsulta.setOnClickListener { startActivity(Intent(this, ConsultaDataStoreActivity::class.java)) }
     }
 }

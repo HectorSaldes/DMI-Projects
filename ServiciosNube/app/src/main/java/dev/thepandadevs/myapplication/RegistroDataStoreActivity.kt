@@ -23,10 +23,10 @@ class RegistroDataStoreActivity : AppCompatActivity() {
                     .collection("usuarios")
                     .add(
                         Usuario(
-                            nombre = binding.etNombre.text.toString(),
-                            paterno = binding.etApellidoPaterno.text.toString(),
-                            materno = binding.etApellidoMaterno.text.toString(),
-                            edad = binding.etEdad.text.toString().toInt(),
+                            nombre = binding.etNombre.editText?.text.toString(),
+                            paterno = binding.etApellidoPaterno.editText?.text.toString(),
+                            materno = binding.etApellidoMaterno.editText?.text.toString(),
+                            edad = binding.etEdad.editText?.text.toString().toInt(),
                             genero = getGenero
                         )
                     ).addOnSuccessListener {
@@ -41,9 +41,9 @@ class RegistroDataStoreActivity : AppCompatActivity() {
     }
 
     private fun validate(): Boolean {
-        return !binding.etNombre.text.isNullOrEmpty()
-                && !binding.etApellidoPaterno.text.isNullOrEmpty()
-                && !binding.etApellidoMaterno.text.isNullOrEmpty()
-                && !binding.etEdad.text.isNullOrEmpty()
+        return !binding.etNombre.editText?.text.isNullOrEmpty()
+                && !binding.etApellidoPaterno.editText?.text.isNullOrEmpty()
+                && !binding.etApellidoMaterno.editText?.text.isNullOrEmpty()
+                && !binding.etEdad.editText?.text.isNullOrEmpty()
     }
 }
