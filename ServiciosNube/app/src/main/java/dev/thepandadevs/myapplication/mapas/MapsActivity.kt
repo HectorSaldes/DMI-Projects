@@ -1,8 +1,11 @@
 package dev.thepandadevs.myapplication.mapas
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
+import android.location.Location
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,10 +33,53 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        binding.btnDirections.setOnClickListener { buscarDireccion(binding.etDirections.editText?.text.toString()) }
+        binding.btnCalculate.setOnClickListener { calcularDistancia() }
     }
+
+    private fun calcularDistancia() {
+        val loc1 = Location("")
+        loc1.latitude = 18.848139
+        loc1.longitude = -99.231522
+
+        val loc2 = Location("")
+        loc2.latitude = 18.849834
+        loc2.longitude = -99.235963
+
+        var distancia = loc1.distanceTo(loc2)
+        Log.i("DISTANCIA", "${distancia} metros")
+        abrirNavegacion(
+            LatLng(loc1.latitude, loc1.longitude),
+            LatLng(loc2.latitude, loc2.longitude)
+        )
+    }
+
+    private fun buscarDireccion(direccion: String) {
+        var latLng = LatLng(0.0, 0.0)
+        val geocoder = Geocoder(this)
+        val direcciones = geocoder.getFromLocationName(direccion, 1)
+        if (!direcciones.isNullOrEmpty()) {
+            val direccionEncontrada = direcciones[0]
+            latLng = LatLng(direccionEncontrada.latitude, direccionEncontrada.longitude)
+            mMap.addMarker(MarkerOptions().position(latLng))
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+        }
+
+    }
+
+    // En aplicación de maps
+    fun abrirNavegacion(origen: LatLng, destino: LatLng) {
+        //http://maps.google.com/maps?saddr=location1&daddr=location2
+        var intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("http://maps.google.com/maps?saddr=" + "${origen.latitude},${origen.longitude}&daddr=" + "${destino.latitude},${destino.longitude}")
+        )
+        startActivity(intent)
+    }
+
 
     /**
      * Manipulates the map once available.
@@ -92,37 +138,37 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
 
             val estado = directions[0].adminArea
-            if(estado != null){
+            if (estado != null) {
                 Log.i("MAPS_LOG_ESTADO", estado)
             }
 
             val municipio = directions[0].locality
-            if(municipio != null){
+            if (municipio != null) {
                 Log.i("MAPS_LOG_MUNICIPIO", municipio)
             }
 
             val colonia = directions[0].subLocality
-            if(colonia != null){
+            if (colonia != null) {
                 Log.i("MAPS_LOG_COLONIA", colonia)
             }
 
             val calle = directions[0].thoroughfare
-            if(calle != null){
+            if (calle != null) {
                 Log.i("MAPS_LOG_CALLE", calle)
             }
 
             val numero = directions[0].subThoroughfare
-            if(numero != null){
+            if (numero != null) {
                 Log.i("MAPS_LOG_NUMERO", numero)
             }
 
             val postal = directions[0].postalCode
-            if(postal != null){
+            if (postal != null) {
                 Log.i("MAPS_LOG_POSTAL", postal)
             }
 
             val direccionCompleta = directions[0].getAddressLine(0)
-            if (direccionCompleta != null){
+            if (direccionCompleta != null) {
                 Log.i("MAPS_LOG_DIRECCIONCOMPLETA", direccionCompleta)
             }
         }

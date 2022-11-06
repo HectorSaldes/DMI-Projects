@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/llContent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llContent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -48,7 +48,36 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Login"
+        app:icon="@drawable/ic_search_person" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:gravity="center"
+        android:text="O inicia con:"
+        android:textSize="20dp" />
+
+
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Iniciar con Google"
+        app:icon="@drawable/ic_google" />
+
+
+
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
@@ -95,7 +124,6 @@
             android:layout_marginTop="15dp"
             android:text="Cerrar sesión"
             app:icon="@drawable/ic_login" />
-    </LinearLayout>
-
+    </LinearLayout>-->
 
 </LinearLayout>

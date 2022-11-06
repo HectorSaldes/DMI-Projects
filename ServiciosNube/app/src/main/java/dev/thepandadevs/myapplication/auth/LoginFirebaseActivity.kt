@@ -1,6 +1,7 @@
 package dev.thepandadevs.myapplication.auth
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -26,6 +27,11 @@ class LoginFirebaseActivity : AppCompatActivity() {
         binding = ActivityLoginFirebaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if(!UserShared(this).getEmail().isEmpty()){
+            startActivity(Intent(this, WelcomeActivity::class.java))
+            finish()
+        }
+
         // GOOGLE
         // Iniciar con google
         val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -46,7 +52,7 @@ class LoginFirebaseActivity : AppCompatActivity() {
 
         // AUTH FIREBASE
         //         Registrar
-        binding.btnRegistrar.setOnClickListener {
+       /* binding.btnRegistrar.setOnClickListener {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                 binding.etUsuario.editText?.text.toString(),
                 binding.etContrasena.editText?.text.toString(),
@@ -62,7 +68,7 @@ class LoginFirebaseActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-        }
+        }*/
 
         //         Iniciar sesión
         binding.btnLogin.setOnClickListener {
@@ -72,6 +78,9 @@ class LoginFirebaseActivity : AppCompatActivity() {
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     Snackbar.make(binding.llContent, "Login correcto", Snackbar.LENGTH_SHORT).show()
+                    UserShared(this).saveUser(binding.etUsuario.editText?.text.toString(), "AUTENTICACIÓN")
+                    startActivity(Intent(this, WelcomeActivity::class.java))
+                    finish()
                 } else {
                     Snackbar.make(
                         binding.llContent,
@@ -82,7 +91,7 @@ class LoginFirebaseActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnVerificar.setOnClickListener {
+       /* binding.btnVerificar.setOnClickListener {
             var user = FirebaseAuth.getInstance().currentUser
             if (user != null) {
                 Snackbar.make(binding.llContent, "User ${user.email}", Snackbar.LENGTH_SHORT)
@@ -106,7 +115,7 @@ class LoginFirebaseActivity : AppCompatActivity() {
             } else {
                 Snackbar.make(binding.llContent, "Sesión cerrada", Snackbar.LENGTH_SHORT).show()
             }
-        }
+        }*/
     }
 
     
@@ -125,6 +134,9 @@ class LoginFirebaseActivity : AppCompatActivity() {
                                 Snackbar.LENGTH_SHORT
                             )
                                 .show()
+                            UserShared(this).saveUser(cuenta.email.toString(), "GOOGLE")
+                            startActivity(Intent(this, WelcomeActivity::class.java))
+                            finish()
                         } else {
                             Snackbar.make(
                                 binding.llContent,
