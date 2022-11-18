@@ -33,12 +33,13 @@ class ChatAdapter(context: Context) : BaseAdapter() {
         var mensajView = LayoutInflater.from(cxt)
         var mensaje = mensajes[position].mensaje
 
-        if (mensajes[position].usuario.equals("taxi")) {
-            myView = mensajView.inflate(R.layout.su_mensaje, null)
+        if (mensajes[position].usuario.equals("pasajero")) {
+            myView = mensajView.inflate(R.layout.mi_mensaje, null)
             viewHolder.mensaje = myView.findViewById(R.id.tvMensaje)
             viewHolder.mensaje!!.setText(mensaje)
+
         } else {
-            myView = mensajView.inflate(R.layout.mi_mensaje, null)
+            myView = mensajView.inflate(R.layout.su_mensaje, null)
             viewHolder.mensaje = myView.findViewById(R.id.tvMensaje)
             viewHolder.mensaje!!.setText(mensaje)
         }
