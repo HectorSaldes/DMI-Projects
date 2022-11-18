@@ -10,13 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.Dash
+import com.google.android.gms.maps.model.Dot
+import com.google.android.gms.maps.model.Gap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 import dev.thepandadevs.myapplication.R
 import dev.thepandadevs.myapplication.databinding.ActivityMapsBinding
 import java.util.*
@@ -80,7 +85,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         startActivity(intent)
     }
 
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -117,6 +121,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         mMap.isMyLocationEnabled = true // Activar mi ubicación
         cameraListener()
+        iniciaServicio()
+        mostrarHistorial()
     }
 
     private fun cameraListener() {
@@ -173,4 +179,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
+
+    private fun iniciaServicio() {
+        LocationLiveData(this).observe(this) {
+            Log.i("MAPS_LOG_SERVICIO", "${it.latitude}, ${it.longitude}")
+        }
+    }
+
+    private fun mostrarHistorial() {
+        val polylineOptions: PolylineOptions = PolylineOptions()
+            .add(
+                LatLng(18.863051, -99.209969),
+                LatLng(18.861092, -99.205226),
+                LatLng(18.858208, -99.203510),
+                LatLng(18.852176, -99.196464),
+                LatLng(18.849078, -99.200137),
+                LatLng(18.851595, -99.199880),
+            )
+            .width(10f)
+            .color(ContextCompat.getColor(this, R.color.md_theme_dark_onPrimary))
+
+        val polyline = mMap.addPolyline(polylineOptions)
+        val patron = listOf(
+            Dot(), Gap(10f), Dash(40f), Gap(10f)
+        )
+        polyline.pattern = patron
+    }
+
 }
