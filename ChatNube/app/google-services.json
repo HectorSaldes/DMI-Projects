@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "374817120741",
+    "project_id": "chatnube",
+    "storage_bucket": "chatnube.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374817120741:android:ebc76ca49cd838dc030f0c",
+        "android_client_info": {
+          "package_name": "dev.thepandadevs.chatnube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374817120741-hi12kalkf55s0fek1ktv708cbitnhpao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.thepandadevs.chatnube",
+            "certificate_hash": "111c35a334e2945c12d08e80c125f1cca17578ad"
+          }
+        },
+        {
+          "client_id": "374817120741-4p2dk5uip0gu8p21nml6geqgavtscs8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKf7BqFEf-v0uB6MZ-SfB9ZyVsa4QCHlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374817120741-4p2dk5uip0gu8p21nml6geqgavtscs8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
