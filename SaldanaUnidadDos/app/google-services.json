@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "660137947221",
+    "project_id": "saldanaunidaddos",
+    "storage_bucket": "saldanaunidaddos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660137947221:android:92d2d9e61383667cfc64dc",
+        "android_client_info": {
+          "package_name": "dev.thepandadevs.saldanaunidaddos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660137947221-nvg29t4g8gfpgqdvu1f1p71n6t0dghbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.thepandadevs.saldanaunidaddos",
+            "certificate_hash": "111c35a334e2945c12d08e80c125f1cca17578ad"
+          }
+        },
+        {
+          "client_id": "660137947221-6cpdfs9pfovn7ma2k8dsqf71hes98meq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVCeE_UgBav4uwBGRmeDKiGlxzVuM4XxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660137947221-6cpdfs9pfovn7ma2k8dsqf71hes98meq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
