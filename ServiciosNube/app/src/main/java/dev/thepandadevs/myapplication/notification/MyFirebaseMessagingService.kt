@@ -30,7 +30,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
-        // Aquí enviamos a nuestro backend un nuevo token
+        Log.i("FIREBASE_SMS_NEW_TOKEN", token)
     }
 
     private fun crearNotificacion(message: String) {
